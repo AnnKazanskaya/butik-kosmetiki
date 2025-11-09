@@ -51,7 +51,12 @@
                 <button class="slider-nav next" onclick="nextSlide()" aria-label="Следующий слайд">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <div class="slide active">
+                <div class="slide slide-video active">
+                    <video class="slide-background-video" autoplay muted loop playsinline preload="auto">
+                        <source src="https://allwebs.ru/video/%D0%BF%D0%B5%D0%BD%D0%BA%D0%B0.OtOuwf" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="slide-overlay"></div>
                     <div class="slide-content">
                         <h2>Добро пожаловать в мир красоты Стерлитамак, мы открылись!</h2>
                         <p>Ждем вас в нашем магазине в ТЦ СитиМолл</p>
@@ -67,7 +72,9 @@
                         <a href="about.html" class="btn-primary">Узнать больше</a>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide slide-image">
+                    <div class="slide-background-image"></div>
+                    <div class="slide-overlay"></div>
                     <div class="slide-content">
                         <h2>Новинки сезона</h2>
                         <p>Самые актуальные тренды в уходовой косметике</p>

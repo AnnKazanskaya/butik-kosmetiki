@@ -117,12 +117,10 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(30px) saturate(180%);
-        -webkit-backdrop-filter: blur(30px) saturate(180%);
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 1);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
         padding: 20px 0;
-        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
     }
     
     .header .mobile-nav.active {
@@ -224,12 +222,80 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     transform: scale(1.05);
+    overflow: hidden;
+}
+
+/* Video slide (first slide) */
+.slide-video {
+    background: #000;
+}
+
+.slide-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Ensure video covers entire slide and maintains aspect ratio */
+.slide-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Image slide (third slide) */
+.slide-image {
+    background: transparent;
+}
+
+.slide-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://allwebs.ru/image/photo-2025-10-28-12-36-49-%282%29.OtOUEp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Overlay for darkening (15% = 0.15 opacity) */
+.slide-video .slide-overlay,
+.slide-image .slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    pointer-events: none;
 }
 
 @media (max-width: 768px) {
     .slide {
         height: 100%;
         top: 0;
+    }
+    
+    .slide-background-video {
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    
+    .slide-background-image {
+        background-attachment: scroll;
     }
 }
 

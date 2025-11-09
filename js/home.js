@@ -20,11 +20,25 @@ function showSlide(index) {
         currentSlideIndex = index;
     }
     
-    slides.forEach(slide => slide.classList.remove('active'));
+    // Pause all videos
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+        const video = slide.querySelector('video');
+        if (video) {
+            video.pause();
+        }
+    });
     dots.forEach(dot => dot.classList.remove('active'));
     
     if (slides[currentSlideIndex]) {
         slides[currentSlideIndex].classList.add('active');
+        // Play video if it's a video slide
+        const video = slides[currentSlideIndex].querySelector('video');
+        if (video) {
+            video.play().catch(error => {
+                console.log('Video autoplay failed:', error);
+            });
+        }
     }
     if (dots[currentSlideIndex]) {
         dots[currentSlideIndex].classList.add('active');
@@ -63,6 +77,19 @@ function initSlider() {
         showSlide(0);
         resetSliderInterval();
         
+        // Ensure video plays on initial load
+        setTimeout(function() {
+            const activeSlide = document.querySelector('.slide.active');
+            if (activeSlide) {
+                const video = activeSlide.querySelector('video');
+                if (video) {
+                    video.play().catch(error => {
+                        console.log('Video autoplay failed on load:', error);
+                    });
+                }
+            }
+        }, 100);
+        
         // Pause on hover
         const slider = document.querySelector('.slider');
         if (slider) {
@@ -78,7 +105,7 @@ function initSlider() {
     }
 }
 
-// Parallax effect for slider
+// Parallax effect for slider (only for non-video slides)
 function initParallax() {
     const slider = document.querySelector('.slider');
     if (!slider) return;
@@ -91,7 +118,8 @@ function initParallax() {
         if (scrolled >= sliderTop && scrolled <= sliderTop + sliderHeight) {
             const parallaxSpeed = 0.5;
             const activeSlide = slider.querySelector('.slide.active');
-            if (activeSlide) {
+            // Don't apply parallax to video slides
+            if (activeSlide && !activeSlide.classList.contains('slide-video')) {
                 const yPos = -(scrolled - sliderTop) * parallaxSpeed;
                 activeSlide.style.transform = `translateY(${yPos}px)`;
             }
