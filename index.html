@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бутик косметики - Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header glass">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Бутик косметики</h1>
+                </div>
+                <button class="menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" class="active">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <nav class="nav-menu mobile-nav">
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Slider -->
+        <section class="slider">
+            <div class="slider-container">
+                <button class="slider-nav prev" onclick="previousSlide()" aria-label="Предыдущий слайд">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-nav next" onclick="nextSlide()" aria-label="Следующий слайд">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="slide active">
+                    <div class="slide-content">
+                        <h2>Добро пожаловать в мир красоты Стерлитамак, мы открылись!</h2>
+                        <p>Ждем вас в нашем магазине в ТЦ СитиМолл</p>
+                        <button class="btn-primary" onclick="openConsultationModal()">
+                            Подарок: диагностика кожи и подбор уходовой косметики!
+                        </button>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <h2>Профессиональный уход</h2>
+                        <p>Экспертные рекомендации для вашей кожи.</p>
+                        <a href="about.html" class="btn-primary">Узнать больше</a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <h2>Новинки сезона</h2>
+                        <p>Самые актуальные тренды в уходовой косметике</p>
+                        <a href="catalog.html" class="btn-primary">Смотреть новинки</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+
+        <!-- We Opened Section -->
+        <section class="section opened-section">
+            <div class="container">
+                <h2 class="section-title">Мы открылись в Стерлитамаке!</h2>
+                <p class="section-text">
+                    Приглашаем вас в наш новый магазин косметики, где каждый найдет идеальный уход для своей кожи. 
+                    Мы предлагаем широкий ассортимент профессиональной косметики от ведущих мировых брендов.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-card glass">
+                        <i class="fas fa-microscope"></i>
+                        <h3>Диагностика кожи</h3>
+                        <p>Профессиональная диагностика состояния вашей кожи</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <i class="fas fa-palette"></i>
+                        <h3>Подбор косметики</h3>
+                        <p>Индивидуальный подбор косметики под ваш тип кожи</p>
+                    </div>
+                    <div class="feature-card glass">
+                        <i class="fas fa-gift"></i>
+                        <h3>Подарки при покупке</h3>
+                        <p>Приятные бонусы и подарки для наших клиентов</p>
+                    </div>
+                </div>
+                <div class="map-container glass">
+                    <div id="map" style="width: 100%; height: 400px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Products -->
+        <section class="section products-section">
+            <div class="container">
+                <h2 class="section-title">Популярные товары</h2>
+                <div class="products-scroll" id="popularProducts">
+                    <!-- Products will be loaded here -->
+                </div>
+                <div class="text-center">
+                    <a href="catalog.html" class="btn-secondary">Смотреть весь каталог</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="section blog-section">
+            <div class="container">
+                <h2 class="section-title">Блог о красоте</h2>
+                <p class="section-text">Узнайте секреты правильного ухода за кожей от наших экспертов</p>
+                <div class="text-center">
+                    <a href="blog.html" class="btn-secondary">Читать блог</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Бутик Косметики</h3>
+                    <p>Современный магазин косметики в Стерлитамаке</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> просп. Октября, 36, Стерлитамак, ТРЦ Сити-Молл этаж 1</p>
+                    <p><i class="fas fa-phone"></i> +7 (995) 279-69-64</p>
+                    <p><i class="fas fa-envelope"></i> info@butik-kosmetiki.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Время работы</h4>
+                    <p>Пн-Пт: 10:00 - 20:00</p>
+                    <p>Сб-Вс: 10:00 - 18:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/cosmetics_boutique" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consultation Modal -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content glass">
+            <span class="close">&times;</span>
+            <h2>Выберите способ связи:</h2>
+            <div class="contact-buttons">
+                <a href="https://t.me/annkazanskaya" class="btn-primary" target="_blank">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/79952796964" class="btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=9f7d55b1-0ee4-4d58-9742-476896d1d0d9&lang=ru_RU" type="text/javascript"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
+

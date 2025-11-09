@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бутик косметики - Каталог</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/catalog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header glass search-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Бутик косметики</h1>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Поиск товаров..." class="search-input">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html" class="active">Каталог</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <nav class="nav-menu mobile-nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html" class="active">Каталог</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section catalog-section">
+            <div class="container">
+                <h1 class="section-title">Каталог товаров</h1>
+                
+                <div class="catalog-controls">
+                    <button class="btn-filter" onclick="toggleFilters()">
+                        <i class="fas fa-filter"></i> Фильтры
+                    </button>
+                    <div class="results-count">
+                        Найдено: <span id="resultsCount">0</span> товаров
+                    </div>
+                </div>
+
+                <!-- Filters Panel -->
+                <div class="filters-panel glass" id="filtersPanel">
+                    <h3>Фильтры</h3>
+                    
+                    <div class="filter-group">
+                        <label>Бренд</label>
+                        <div class="filter-options" id="brandFilter">
+                            <!-- Brands will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Тип кожи</label>
+                        <div class="filter-options" id="skinTypeFilter">
+                            <label><input type="checkbox" value="жирная"> Жирная</label>
+                            <label><input type="checkbox" value="сухая"> Сухая</label>
+                            <label><input type="checkbox" value="чувствительная"> Чувствительная</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Проблемы кожи</label>
+                        <div class="filter-options" id="skinProblemsFilter">
+                            <label><input type="checkbox" value="возраст"> Возраст</label>
+                            <label><input type="checkbox" value="акне"> Акне</label>
+                            <label><input type="checkbox" value="шелушение"> Шелушение</label>
+                            <label><input type="checkbox" value="пигментация"> Пигментация</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Тип продукта</label>
+                        <div class="filter-options" id="productTypeFilter">
+                            <label><input type="checkbox" value="крем"> Крем</label>
+                            <label><input type="checkbox" value="сыворотка"> Сыворотка</label>
+                            <label><input type="checkbox" value="гель"> Гель</label>
+                            <label><input type="checkbox" value="маска"> Маска</label>
+                            <label><input type="checkbox" value="флюид"> Флюид</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Особые категории</label>
+                        <div class="filter-options" id="specialCategoriesFilter">
+                            <label><input type="checkbox" value="акционный товар"> Акционный товар</label>
+                            <label><input type="checkbox" value="новинка"> Новинка</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Стоимость</label>
+                        <div class="price-range">
+                            <input type="range" id="priceMin" min="0" max="10000" value="0" step="100">
+                            <input type="range" id="priceMax" min="0" max="10000" value="10000" step="100">
+                            <div class="price-values">
+                                <span>от <span id="priceMinValue">0</span> ₽</span>
+                                <span>до <span id="priceMaxValue">10000</span> ₽</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary" onclick="applyFilters()">Применить</button>
+                    <button class="btn-secondary" onclick="resetFilters()">Сбросить</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <!-- Pagination will be generated here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Бутик Косметики</h3>
+                    <p>Современный магазин косметики в Стерлитамаке</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> просп. Октября, 36, Стерлитамак, ТРЦ Сити-Молл этаж 1</p>
+                    <p><i class="fas fa-phone"></i> +7 (995) 279-69-64</p>
+                    <p><i class="fas fa-envelope"></i> info@butik-kosmetiki.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Время работы</h4>
+                    <p>Пн-Пт: 10:00 - 20:00</p>
+                    <p>Сб-Вс: 10:00 - 18:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/cosmetics_boutique" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consultation Modal -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content glass">
+            <span class="close">&times;</span>
+            <h2>Выберите способ связи:</h2>
+            <div class="contact-buttons">
+                <a href="https://t.me/annkazanskaya" class="btn-primary" target="_blank">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/79952796964" class="btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html>
+

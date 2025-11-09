@@ -1,0 +1,75 @@
+╔══════════════════════════════════════════════════════════════╗
+║        БЫСТРАЯ ИНСТРУКЦИЯ: ДЕПЛОЙ НА GITHUB PAGES           ║
+╚══════════════════════════════════════════════════════════════╝
+
+📋 ПОШАГОВАЯ ИНСТРУКЦИЯ:
+
+1️⃣  СОЗДАЙТЕ АККАУНТ НА GITHUB
+   • Зайдите на https://github.com
+   • Нажмите "Sign up" и создайте аккаунт
+   • Подтвердите email
+
+2️⃣  СОЗДАЙТЕ РЕПОЗИТОРИЙ
+   • Нажмите "+" → "New repository"
+   • Имя: butik-kosmetiki (или любое другое)
+   • Выберите Public
+   • НЕ ставьте галочку "Initialize with README"
+   • Нажмите "Create repository"
+
+3️⃣  УСТАНОВИТЕ GIT (если не установлен)
+   • Скачайте: https://git-scm.com/download/win
+   • Установите с настройками по умолчанию
+
+4️⃣  ОТКРОЙТЕ POWERShell В ПАПКЕ ПРОЕКТА
+   • Нажмите Shift + ПКМ в папке "agni"
+   • Выберите "Open PowerShell window here"
+
+5️⃣  ВЫПОЛНИТЕ КОМАНДЫ:
+
+   git init
+   git add .
+   git commit -m "Initial commit"
+   
+   git remote add origin https://github.com/ВАШ_USERNAME/butik-kosmetiki.git
+   git branch -M main
+   git push -u origin main
+
+   ⚠️  Замените ВАШ_USERNAME на ваш GitHub username
+   ⚠️  Замените butik-kosmetiki на имя вашего репозитория
+
+6️⃣  ВКЛЮЧИТЕ GITHUB PAGES
+   • Откройте ваш репозиторий на GitHub
+   • Settings → Pages (в левом меню)
+   • Source: Branch "main", Folder "/ (root)"
+   • Нажмите Save
+
+7️⃣  ВАШ САЙТ БУДЕТ ДОСТУПЕН:
+   https://ВАШ_USERNAME.github.io/butik-kosmetiki/
+
+   ⏱️  Подождите 1-2 минуты для активации
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔄 ОБНОВЛЕНИЕ САЙТА (когда вносите изменения):
+
+   git add .
+   git commit -m "Описание изменений"
+   git push
+
+   Изменения появятся через 1-2 минуты
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ ЕСЛИ ВОЗНИКЛИ ПРОБЛЕМЫ:
+
+• Git не найден → Установите Git с официального сайта
+• Authentication failed → Создайте Personal Access Token в GitHub:
+  Settings → Developer settings → Personal access tokens
+• Сайт не открывается → Подождите 2-3 минуты, очистите кеш браузера
+
+📖 ПОДРОБНАЯ ИНСТРУКЦИЯ: см. файл GITHUB_PAGES_DEPLOY.md
+
+╔══════════════════════════════════════════════════════════════╗
+║                    УДАЧИ С ДЕПЛОЕМ! 🚀                      ║
+╚══════════════════════════════════════════════════════════════╝
+

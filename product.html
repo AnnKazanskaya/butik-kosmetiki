@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бутик косметики - Товар</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header glass">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Бутик косметики</h1>
+                </div>
+                <button class="menu-toggle" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <nav class="nav-menu mobile-nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section product-section">
+            <div class="container">
+                <div id="productContent">
+                    <!-- Product will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Бутик Косметики</h3>
+                    <p>Современный магазин косметики в Стерлитамаке</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> просп. Октября, 36, Стерлитамак, ТРЦ Сити-Молл этаж 1</p>
+                    <p><i class="fas fa-phone"></i> +7 (995) 279-69-64</p>
+                    <p><i class="fas fa-envelope"></i> info@butik-kosmetiki.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Время работы</h4>
+                    <p>Пн-Пт: 10:00 - 20:00</p>
+                    <p>Сб-Вс: 10:00 - 18:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/cosmetics_boutique" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consultation Modal -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content glass">
+            <span class="close">&times;</span>
+            <h2>Выберите способ связи:</h2>
+            <div class="contact-buttons">
+                <a href="https://t.me/annkazanskaya" class="btn-primary" target="_blank">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/79952796964" class="btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>
+

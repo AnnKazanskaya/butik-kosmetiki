@@ -1,0 +1,129 @@
+/* Contacts page styles */
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.contact-card p {
+    line-height: 1.6;
+    color: var(--gray-dark);
+}
+
+.contact-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+.map-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.map-container {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.directions {
+    padding: 30px;
+}
+
+.directions h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.directions p {
+    line-height: 1.8;
+    color: var(--gray-dark);
+    margin-bottom: 20px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.social-button {
+    padding: 30px 40px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-width: 150px;
+}
+
+.social-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.social-button i {
+    font-size: 3rem;
+}
+
+.social-button span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .map-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .social-button {
+        flex-direction: row;
+        justify-content: center;
+        min-width: auto;
+    }
+}
+
+
