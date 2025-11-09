@@ -51,11 +51,9 @@
                 <button class="slider-nav next" onclick="nextSlide()" aria-label="Следующий слайд">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <div class="slide slide-video active">
-                    <video class="slide-background-video" autoplay muted loop playsinline preload="auto">
-                        <source src="https://allwebs.ru/images/2025/11/10/9c370a22603cdc239684f30fa9790c69.webm" type="video/webm">
-                        Ваш браузер не поддерживает видео.
-                    </video>
+                
+                <!-- Слайд 1: Фото -->
+                <div class="slide slide-image active" style="background-image: url('https://allwebs.ru/images/2025/11/10/070d5f0aaf172588cd529e202e1c7103.jpg')">
                     <div class="slide-overlay"></div>
                     <div class="slide-content">
                         <h2>Добро пожаловать в мир красоты Стерлитамак, мы открылись!</h2>
@@ -65,15 +63,23 @@
                         </button>
                     </div>
                 </div>
-                <div class="slide">
+                
+                <!-- Слайд 2: Видео -->
+                <div class="slide slide-video">
+                    <video autoplay muted loop playsinline preload="auto" webkit-playsinline>
+                        <source src="https://allwebs.ru/images/2025/11/10/9c370a22603cdc239684f30fa9790c69.webm" type="video/webm">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                    <div class="slide-overlay"></div>
                     <div class="slide-content">
                         <h2>Профессиональный уход</h2>
                         <p>Экспертные рекомендации для вашей кожи.</p>
                         <a href="about.html" class="btn-primary">Узнать больше</a>
                     </div>
                 </div>
-                <div class="slide slide-image">
-                    <div class="slide-background-image"></div>
+                
+                <!-- Слайд 3: Фото -->
+                <div class="slide slide-image" style="background-image: url('https://allwebs.ru/images/2025/11/10/1a5f01da1527188c4a3e51c10c097a0e.jpg')">
                     <div class="slide-overlay"></div>
                     <div class="slide-content">
                         <h2>Новинки сезона</h2>
