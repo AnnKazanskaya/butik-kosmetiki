@@ -220,13 +220,6 @@ function initSliderSwipe() {
         
         isSwiping = false;
     });
-
-    // Отключаем вертикальный скролл при горизонтальном свайпе
-    slider.addEventListener('touchmove', (e) => {
-        if (isSwiping) {
-            e.preventDefault();
-        }
-    }, { passive: false });
 }
 
 // Добавь вызов функции в инициализацию
@@ -235,5 +228,5 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPopularProducts();
     initMap();
     initParallax();
-    initSliderSwipe(); // Добавь эту строку
+    initSliderSwipe(); 
 });
