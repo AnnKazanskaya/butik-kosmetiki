@@ -184,3 +184,56 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallax();
 });
 
+// Swipe для мобильных устройств
+function initSliderSwipe() {
+    const slider = document.querySelector('.slider-container');
+    let startX = 0;
+    let currentX = 0;
+    let isSwiping = false;
+
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        currentX = startX;
+        isSwiping = true;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        if (!isSwiping) return;
+        currentX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', () => {
+        if (!isSwiping) return;
+        
+        const diffX = startX - currentX;
+        const minSwipeDistance = 50; // минимальное расстояние свайпа
+        
+        if (Math.abs(diffX) > minSwipeDistance) {
+            if (diffX > 0) {
+                // Свайп влево - следующий слайд
+                nextSlide();
+            } else {
+                // Свайп вправо - предыдущий слайд
+                previousSlide();
+            }
+        }
+        
+        isSwiping = false;
+    });
+
+    // Отключаем вертикальный скролл при горизонтальном свайпе
+    slider.addEventListener('touchmove', (e) => {
+        if (isSwiping) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+}
+
+// Добавь вызов функции в инициализацию
+document.addEventListener('DOMContentLoaded', function() {
+    initSlider();
+    loadPopularProducts();
+    initMap();
+    initParallax();
+    initSliderSwipe(); // Добавь эту строку
+});
