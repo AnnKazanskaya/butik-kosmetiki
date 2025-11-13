@@ -261,11 +261,28 @@
     }
     
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
     
     .filters-panel {
         max-height: 70vh;
+    }
+
+        .product-card {
+        min-width: auto;
+    }
+    
+    .product-card img {
+        height: 150px;
+    }
+    
+    .product-card-content {
+        padding: 10px;
+    }
+    
+    .product-card-name {
+        font-size: 0.8rem;
     }
 }
 
@@ -317,6 +334,17 @@
     
     .header.search-header .menu-toggle {
         display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .product-card img {
+        height: 200px; /* Возвращаем нормальную высоту */
     }
 }
 

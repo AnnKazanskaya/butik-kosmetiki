@@ -10,6 +10,7 @@ async function loadProducts() {
     try {
         const response = await fetch('cosmetics_products.json');
         allProducts = await response.json();
+        allProducts = shuffleArray([...allProducts]);
         filteredProducts = [...allProducts];
         populateFilters();
         initPriceRange();
@@ -20,6 +21,14 @@ async function loadProducts() {
     }
 }
 
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
 // Initialize price range
 function initPriceRange() {
     const priceMin = document.getElementById('priceMin');
