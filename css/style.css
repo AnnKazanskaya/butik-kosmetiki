@@ -93,7 +93,7 @@ body {
 /* Для мобильных */
 @media (max-width: 768px) {
     .logo-img {
-        height: 30px;
+        height: 25px;
     }
 }
 
@@ -831,10 +831,15 @@ body {
     .btn-secondary {
         padding: 10px 20px;
         font-size: 0.9rem;
+
     }
     
     .logo h1 {
         font-size: 1.2rem;
+    }
+
+    .logo-img {
+        height: 22px;
     }
 }
 
@@ -849,6 +854,10 @@ body {
     
     .section-title {
         font-size: 1.5rem;
+    }
+    
+        .logo-img {
+        height: 22px; /* ← Еще меньше для маленьких экранов */
     }
 }
 
